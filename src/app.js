@@ -10,10 +10,6 @@ app.use(express.json());
 // Routes
 app.use("/api/stocks", stockRoutes);
 
-app.use((req, res) => {
-  res.status(404).json({ success: false, message: "Route not found" });
-});
-
 // Error handling middleware
 app.use((err, req, res, next) => {
   logger.error(err.message);
