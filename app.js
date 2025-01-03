@@ -2,8 +2,15 @@ const express = require("express");
 const stockRoutes = require("./routes/stockRoutes");
 const logger = require("./utils/logger");
 const indexRoutes = require("./routes/indexRoutes");
+const cors = require("cors");
 
 const app = express();
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+
+app.use(cors(corsOptions));
 
 // Middleware
 app.use(express.json());
